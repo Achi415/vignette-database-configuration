@@ -1,22 +1,56 @@
 # Install and load the package
-install.packages("RMariaDB")
+#install.packages("RMariaDB")
 library(RMariaDB)
 library(DBI)
 
 ## Prepare the CSV file
 
 # sample data downloaded from https://archive.ics.uci.edu/ml/datasets/Bike+Sharing+Dataset
-# day.csv - bike sharing counts aggregated on daily basis. Records: 731 days
-# stored under 'data/day.csv'
+# two files:
+  # hour.csv : bike sharing counts aggregated on hourly basis. Records: 17379 hours
+  # day.csv : bike sharing counts aggregated on daily basis. Records: 731 days
+# stored under 'data' folder, along with a Readme with the data description.
 
-## Import the CSV File into a data frame
-df <-read.csv("data/day.csv", header=TRUE)
-head(df)
+## Import csv files as data frames
+df_day <- read.csv("data/day.csv", header=TRUE)
+head(df_day)
 
-## Connect R to MySQL by creating a MySQL connection object
+df_hour <-read.csv("data/hour.csv", header=TRUE)
+head(df_hour)
+
+## Create a database
+# connect R to MySQL by creating a MySQL connection object
 con <- dbConnect(RMariaDB::MariaDB(), 
-                  user = 'root', 
-                  password = 'password', 
-                  host = '127.0.0.1',
-                  dbname = 'bike-sharing')
+                 user = 'root', 
+                 password = 'password',
+                 host = 'localhost')
+
+# create a new database
+dbSendQuery(con, "CREATE DATABASE bikes")
+dbSendQuery(con, "USE bikes")
+
+# reconnect to the database that we just created
+mydb <- dbConnect(RMariaDB::MariaDB(), 
+                 user = 'root', 
+                 password = 'password',
+                 host = 'localhost',
+                 dbname = 'bikes')
+
+# Write the data frames to database tables
+dbWriteTable(conn = mydb,
+             name = "day",
+             value = df_day)
+
+dbWriteTable(conn = mydb,
+             name = "hour",
+             value = df_hour)
+
+# list the tables available in bikes
+dbListTables(mydb)
+
+# list the fields in a table
+dbListFields(con, "day")
+
+# view the whole table
+dbReadTable(con, "day")
 
