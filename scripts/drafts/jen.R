@@ -49,8 +49,8 @@ dbWriteTable(conn = mydb,
 dbListTables(mydb)
 
 # list the fields in a table
-dbListFields(con, "day")
+dbListFields(mydb, "day")
 
 # view the whole table
-dbReadTable(con, "day")
+dbReadTable(mydb, "day")
 
