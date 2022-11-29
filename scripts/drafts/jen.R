@@ -1,10 +1,6 @@
 ### PRELIMINARY STEPS ###
-## 1. Download MySQL
-# MySQL Community Server 8.0.31: https://dev.mysql.com/downloads/mysql/
-# MYSQL Installation Guide: https://dev.mysql.com/doc/mysql-installation-excerpt/5.7/en/
-# The installer will probably prompt you to assign a password to the initial 
-# 'root' account created during the MySQL installation procedure. Remember this password.
-# For more information, see Section 9.4 "Securing the Initial MySQL Account" in the Guide.
+
+## 1. Install MySQL Server on Macbook M1/M2
 
 ## 2. Install and load the packages
 install.packages("RMariaDB")

@@ -1,0 +1,14 @@
+# Installing the MySQL Server
+
+1.  Download MySQL Community Server 8.0.31 from <https://dev.mysql.com/downloads/mysql/>. Be sure to select the correct operating system and processor for your computer. For Macbook M1/M2, it is
+macOS 12 (ARM, 64-bit), DMG Archive.
+
+![](~/pstat197/vignette-database-configuration/img/install_mysql/install_1.jpg)
+
+2.  Once the download is complete, open mysql-8.0.31-macos12-arm64.dmg. This file can be found either in the downloads toolbar at the bottom your browser window (Google Chrome) or in the 'Downloads' folder of your computer. In the subsequent window, click on the icon for mysql-8.0.31-macos12-arm64.pkg and allow the package to run its program.
+
+![](~/pstat197/vignette-database-configuration/img/install_mysql/install_2.jpg) ![](~/pstat197/vignette-database-configuration/img/install_mysql/install_3.jpg)
+
+3.  Follow the installation steps in the 'Install MySQL 8.0.31 Community' window. At the 'Configuration' step (in the sidebar below), the installer will prompt you to choose a password for an initial 'root' account. Remember this password for configuring your database later. When the installation has completed successfully, you may move the installer to Trash.
+
+![](~/pstat197/vignette-database-configuration/img/install_mysql/install_4.jpg) ![](~/pstat197/vignette-database-configuration/img/install_mysql/install_5.jpg)
