@@ -1,0 +1,45 @@
+---
+title: "Vignette-group1-Configuring a Database and Writing Queries in R"
+author: "Jennifer Park, Russell Liu, Haotian Xia, Haoming Deng, Ankur Malik."
+date: "2022-12-07"
+output: html_document
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
+## Contributors
+
+Jennifer Park, Russell Liu, Haotian Xia, Haoming Deng, Ankur Malik
+
+## Abstract
+
+In this report, we explore how to configure a dataset and write queries
+in R. Specifically, we first configure the database, build the database,
+including steps such as Import Libraries, Connect R/Python to MySQL,
+Create a new database in R/Python, Connect to the Database,Create tables
+and Insert data/table into database. We then write queries by
+introducing some common functions, tables, syntax and filtering clause.
+Besides, we created a document which explains how to setup MySQL and the
+corresponding environment steps by steps.
+
+## Repository contents
+
+The repo contents include ....
+
+## Dataset
+
+Our dataset is Bike Sharing Dataset from UC,Irvine Machine Learning
+Center. This dataset contains the hourly and daily count of rental bikes
+between years 2011 and 2012 in Capital bikeshare system with the
+corresponding weather and seasonal information. We are going to use this
+dataset as the example to implement some SQL functions.
+
+## Results and Analysis
+
+Copy and paste code here?
+
+## Reference list
+
+1.https://www.datacareer.de/blog/connect-to-postgresql-with-r-a-step-by-step-example/
+2.https://archive.ics.uci.edu/ml/datasets.php
